@@ -1,0 +1,1 @@
+dotnet pack -c Release -v detailed -o Output/NuGet Source/SlidingCollection/SlidingCollection.csproj
