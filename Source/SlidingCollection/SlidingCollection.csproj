@@ -7,7 +7,14 @@
     <Title>Sliding Collection</Title>
     <Authors>Peter Zbinden</Authors>
     <PackageProjectUrl>https://github.com/PeterZbinden/SlidingCollection</PackageProjectUrl>
-    <PackageReadmeFile></PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
