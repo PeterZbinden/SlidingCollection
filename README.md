@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/NuGet%2Chttps%3A%2F%2Fwww.nuget.org%2Fpackages%2FSlidingCollection)
+[NuGet.org](https://www.nuget.org/packages/SlidingCollection)
 
 # Sliding Collection
 A library that implements a collection to simplify processing data using a 'moving window' of x items.
