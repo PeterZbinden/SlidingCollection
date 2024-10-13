@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>Sliding Collection</Title>
+    <Authors>Peter Zbinden</Authors>
+    <PackageProjectUrl>https://github.com/PeterZbinden/SlidingCollection</PackageProjectUrl>
+    <PackageReadmeFile></PackageReadmeFile>
+  </PropertyGroup>
+
+</Project>
