@@ -3,12 +3,12 @@ A library that implements a collection to simplify processing data using a 'movi
 
 
 ### Add using
-´´´csharp
+```csharp
 using SlidingCollection;
-´´´
+```
 
 ### Usage
-´´´csharp
+```csharp
 var maxSize = 5;
 /// Create a new Collection
 var collection = new SlidingEnumerable<int>(maxSize);
@@ -36,4 +36,4 @@ foreach (var value in collection)
 
 // The first element '1' was removed as soon as value '6' was added
 // because the defined 'maxSize' only allows for 5 Values in the collection
-´´´
+```
