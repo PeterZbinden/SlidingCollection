@@ -10,30 +10,33 @@ namespace SlidingCollection;
 /// <typeparam name="T"></typeparam>
 public class SlidingEnumerable<T> : IEnumerable<T>
 {
-    public int Length { get; private set; }
+    private readonly int _maxSize;
     private int _startIndexOffset;
-    private int _itemsInCollection;
-    private readonly T[] _items;
 
-    public SlidingEnumerable(int size)
+    public int Length => _length;
+
+    private readonly T[] _items;
+    private int _length;
+
+    public SlidingEnumerable(int maxSize)
     {
-        if (size < 1)
+        if (maxSize < 1)
         {
-            throw new ApplicationException($"Size of '{size}' is not valid, only sizes > 0 are valid");
+            throw new ApplicationException($"Size of '{maxSize}' is not valid, only sizes > 0 are valid");
         }
 
-        Length = size;
+        _maxSize = maxSize;
         _startIndexOffset = 0;
-        _items = new T[size];
+        _items = new T[maxSize];
 
         ResetAllValues();
     }
 
     public T GetAtIndex(int index)
     {
-        if (index < 0 || index >= Length)
+        if (index < 0 || index >= _maxSize)
         {
-            throw new IndexOutOfRangeException($"Index of {index} is outside of the specified size of {Length}");
+            throw new IndexOutOfRangeException($"Index of {index} is outside of the specified size of {_maxSize}");
         }
 
         var i = GetInternalIndex(index);
@@ -43,7 +46,7 @@ public class SlidingEnumerable<T> : IEnumerable<T>
 
     public T First()
     {
-        if (_itemsInCollection < 1)
+        if (Length < 1)
         {
             throw new ApplicationException("No Items added");
         }
@@ -53,47 +56,38 @@ public class SlidingEnumerable<T> : IEnumerable<T>
 
     public T Last()
     {
-        if (_itemsInCollection < 1)
+        if (Length < 1)
         {
             throw new ApplicationException("No Items added");
         }
 
-        return GetAtIndex(_itemsInCollection - 1);
+        return GetAtIndex(Length - 1);
     }
 
     int GetInternalIndex(int externalIndex)
     {
-        if (_itemsInCollection > 0)
-        {
-            if (_itemsInCollection < Length)
-            {
-                return (externalIndex + _startIndexOffset);
-            }
-
-            return (externalIndex + _startIndexOffset) % Length;
-        }
-        return externalIndex;
+        return (externalIndex + _startIndexOffset) % _maxSize;
     }
 
     public void Add(T item)
     {
-        var index = GetInternalIndex(_itemsInCollection);
+        var index = GetInternalIndex(Length);
         _items[index] = item;
-        if (_itemsInCollection < Length)
+        if (Length < _maxSize)
         {
-            _itemsInCollection++;
+            _length++;
         }
         else
         {
-            _startIndexOffset = (_startIndexOffset + 1) % Length;
+            _startIndexOffset = (_startIndexOffset + 1) % _maxSize;
         }
     }
 
     public IEnumerator<T> GetEnumerator()
     {
-        for (int i = 0; i < _itemsInCollection; i++)
+        for (int i = 0; i < Length; i++)
         {
-            var idx  = GetInternalIndex(i);
+            var idx = GetInternalIndex(i);
             yield return _items[idx];
         }
     }
@@ -121,7 +115,7 @@ public class SlidingEnumerable<T> : IEnumerable<T>
 
     private void ResetAllValues()
     {
-        for (int i = 0; i < Length; i++)
+        for (int i = 0; i < _maxSize; i++)
         {
             _items[i] = default(T);
         }

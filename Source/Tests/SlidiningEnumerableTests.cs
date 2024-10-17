@@ -3,7 +3,7 @@ using SlidingCollection;
 
 namespace Tests
 {
-    public class SlidiningCollectionTests
+    public class SlidiningEnumerableTests
     {
         [Fact]
         public void Ensure_MaxSize_IsRespected()

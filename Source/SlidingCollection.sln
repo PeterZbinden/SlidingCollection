@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingCollection", "SlidingCollection\SlidingCollection.csproj", "{9F07EC62-F84F-4632-8C1C-B9AABF21A352}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlidingCollection", "SlidingCollection\SlidingCollection.csproj", "{9F07EC62-F84F-4632-8C1C-B9AABF21A352}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{437B96D2-1B4A-4983-A620-052539081336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{437B96D2-1B4A-4983-A620-052539081336}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark", "Benchmark\Benchmark.csproj", "{3FBA378B-3F97-419D-996D-2317A8F47B3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{437B96D2-1B4A-4983-A620-052539081336}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{437B96D2-1B4A-4983-A620-052539081336}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{437B96D2-1B4A-4983-A620-052539081336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FBA378B-3F97-419D-996D-2317A8F47B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FBA378B-3F97-419D-996D-2317A8F47B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FBA378B-3F97-419D-996D-2317A8F47B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FBA378B-3F97-419D-996D-2317A8F47B3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

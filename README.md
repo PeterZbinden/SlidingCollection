@@ -1,10 +1,10 @@
 [NuGet.org](https://www.nuget.org/packages/SlidingCollection)
 
 # Sliding Collection
-A library that implements a collection to simplify processing data using a 'moving window' of x items.
+A library that simplifies processing data using a 'moving window' of x items.
 
 
-### Add using
+### Add Namespace
 ```csharp
 using SlidingCollection;
 ```
@@ -12,7 +12,7 @@ using SlidingCollection;
 ### Usage
 ```csharp
 var maxSize = 5;
-/// Create a new Collection
+// Create a new Collection
 var collection = new SlidingEnumerable<int>(maxSize);
 
 // Add new values
